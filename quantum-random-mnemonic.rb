@@ -33,9 +33,6 @@ if !ARGV.empty?
       exit
     end
 
-    #opts.on("-d", "--directory DIRECTORY", "Specify a directory") do |directory|
-    #  options[:directory] = directory
-    #end
   end.parse!
   puts "App parameters: #{options}"
 else
