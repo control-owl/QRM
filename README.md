@@ -12,7 +12,7 @@
 2. Start generating quantum random numbers 
 3. Let the website run for a long time !!!! It will generated very long binary string but you will only see a trimmed version of it 
 4. To select **whole output**, triple-click on a binary string
-5. Copy output to local file "entropy.txt"
+5. Copy output to local file "entropy/binary.qrn"
 
 
 ## Start script with:
