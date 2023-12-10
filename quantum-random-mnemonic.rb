@@ -2,7 +2,8 @@
 
 # Reqs
 require 'optparse'
-
+# require 'money-tree'
+require 'digest'
 
 # Variables
 APP_NAME = "QRM"
@@ -90,7 +91,6 @@ puts "#{entropy_length}-bit Entropy: \"#{entropy}\""
 
 
 # Create checksum
-require 'digest'
 size = entropy.length / 32 # number of bits to take from hash of entropy (1 bit checksum for every 32 bits entropy)
 sha256 = Digest::SHA256.digest([entropy].pack("B*")) # hash of entropy (in raw binary)
 checksum = sha256.unpack("B*").join[0..size-1] # get desired number of bits
@@ -123,3 +123,28 @@ end
 # Show mnemonic
 mnemonic = sentence.join(" ")
 puts "Mnemonic: \"#{mnemonic}\""
+
+
+# Passphrase
+
+
+# BIP32 Root Key
+
+
+# Replace 'your mnemonic seed words...' with your actual mnemonic seed
+# mnemonic_seed = mnemonic
+
+# # Create a master key from the mnemonic seed
+# master_key = MoneyTree::Master.from_mnemonic(mnemonic_seed)
+
+# # Get the BIP32 root key
+# root_key = master_key.to_bip32
+
+# puts "Mnemonic Seed: #{mnemonic_seed}"
+# puts "BIP32 Root Key: #{root_key}"
+
+# derivations
+
+# addresses
+
+# private keys
