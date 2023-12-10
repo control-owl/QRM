@@ -2,12 +2,13 @@
 
 # Reqs
 require 'optparse'
+require 'digest'
 
 
 # Variables
 APP_NAME = "QRM"
 APP_DESCRIPTION = "Quantum random mnemonic"
-APP_version = "0.4"
+APP_version = "0.5"
 entropy_file = "entropy/binary.qrn"
 wordlist_file = "src/bip39-english.txt"
 entropy_length = 256
@@ -90,7 +91,6 @@ puts "#{entropy_length}-bit Entropy: \"#{entropy}\""
 
 
 # Create checksum
-require 'digest'
 size = entropy.length / 32 # number of bits to take from hash of entropy (1 bit checksum for every 32 bits entropy)
 sha256 = Digest::SHA256.digest([entropy].pack("B*")) # hash of entropy (in raw binary)
 checksum = sha256.unpack("B*").join[0..size-1] # get desired number of bits
@@ -119,6 +119,7 @@ pieces.each do |piece|
   sentence << word.chomp # add to sentence (removing newline from end of word)
   puts "#{piece} #{i.to_s.rjust(4)} #{word}"
 end
+
 
 # Show mnemonic
 mnemonic = sentence.join(" ")

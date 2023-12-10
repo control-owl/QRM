@@ -1,9 +1,9 @@
 ## Reqs
 
-    jq
-    xxd
-    ruby
-    zenity
+- jq
+- xxd
+- ruby
+- zenity
 
 
 ## Steps:
@@ -17,10 +17,11 @@
 
 ## Start script with:
 
+```
 ruby quantum-random-mnemonic.rb
-
+```
 
 ## What will happens?
 
-1. Script will read a specific portion of a entropy file (256 bits) starting from a random position
-2. Then it will convert it to a 24-word mnemonic
+1. Script will read a specific portion of a entropy file, starting from a random position
+2. Then it will convert it to a mnemonic words
