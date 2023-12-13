@@ -126,11 +126,12 @@ mnemonic = sentence.join(" ")
 puts "Mnemonic: \"#{mnemonic}\""
 
 
-require 'bitcoin' # gem install bitcoin
-# Generate a seed from the mnemonic
-seed = Bitcoin::Trezor::Mnemonic.to_seed(mnemonic)
-#seed = Bitcoin::Trezor::Mnemonic.to_seed(mnemonic, passphrase)
-puts "Seed: \"#{seed}\""
+# This will come in next update
+# require 'bitcoin' # gem install bitcoin
+# # Generate a seed from the mnemonic
+# seed = Bitcoin::Trezor::Mnemonic.to_seed(mnemonic)
+# #seed = Bitcoin::Trezor::Mnemonic.to_seed(mnemonic, passphrase)
+# puts "Seed: \"#{seed}\""
 # WORKING UNTIL HERE
 
 # Create a master key from the private key
